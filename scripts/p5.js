@@ -1,6 +1,10 @@
 let trumps = [];
 let trump;
-let song;
+let shutGun;
+//------------------Resize Windows = Setup
+
+window.onresize = setup;
+// ----------------------
 
 function preload() {
     img = loadImage("https://www.pngkey.com/png/full/4-41148_trump-face-donald-trump.png")
@@ -10,25 +14,28 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    song = loadSound("gunshot.wav");
+    shutGun = loadSound("resources/gunshot.wav");
     for (let i = 0; i < 30; i++) {
-        let x = random(width); // USAR PERLON NOISE
-        let y = random(height); // USAR PERLON NOISE
-        let r = random(100, 100); // USAR PERLON NOISE
+        let x = random(width-100); // USAR PERLON NOISE
+        let y = random(height-100); // USAR PERLON NOISE
+        let r = random(50, 50); // USAR PERLON NOISE
         let b = new Bubble(x, y, r);
         trumps.push(b);
+        if(trumps.length > 30){
+            trumps.splice(i, 30);
+
+        }
     }
 
 }
 
 function mousePressed() {
-    if (song.isPlaying()) {
-        // .isPlaying() returns a boolean
-        song.stop();
-        
+    if (shutGun.isPlaying()) {
+        shutGun.stop();
+
     } else {
-        song.play();
-       
+        shutGun.play();
+
     }
     for (let i = trumps.length - 1; i >= 0; i--) {
         if (trumps[i].contains(mouseX, mouseY)) {
@@ -76,7 +83,13 @@ class Bubble {
     }
 
     show() {
+        if (width < 500) {
+            image(img, this.x, this.y, 70, 70) // <-- iphone 6,7,8
 
-        image(img, this.x, this.y, 100, 130)
+        }
+        if (width > 500) {
+            image(img, this.x, this.y, 60, (height / 10)) // <-- wide res
+
+        }
     }
 }
