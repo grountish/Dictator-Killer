@@ -16,7 +16,7 @@ nav {
 }
 
 .hero {
-    height: 95vh;
+    height: 91vh;
     background-color: #121521;
 
 }
@@ -77,4 +77,8 @@ footer {
     color: red;
     text-decoration: none;
 
+}
+
+.ul2 li {
+    text-align: end;
 }
