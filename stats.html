@@ -29,35 +29,46 @@
                 class="fas fa-skull-crossbones"></i></button>
         <div class="collapse navbar-collapse justify-content-end" id="nav">
             <ul id="nav-ul" class="navbar-nav mr-5">
-                <li><a class="navli   px-1 mr-3" href="about.html">ABOUT</a></li>
+                <li><a class="navli   px-1 mr-3" href="#skills">ABOUT</a></li>
                 <li><a class="navli   px-1 mr-3" href="game.html">GAME</a></li>
-                <li><a class="navli   px-1 mr-3" href="stats.html">STATS</a></li>
-                <li><a class="navli   px-1 mr-3" href="login.html">LOG IN / SIGN UP</a></li>
+                <li><a class="navli   px-1 mr-3" href="#contact">STATS</a></li>
+                <li><a class="navli   px-1 mr-3" href="#contact">LOG IN / SIGN UP</a></li>
 
             </ul>
         </div>
     </nav>
     <hr>
-    <div id="hero-section" class="container-fluid">
+    <section id="hero-section" class="container-fluid">
         <div class="row justify-content-center align-items-center hero ">
-            <div class="bg-danger col-sm-8 ">
-                <div class="row">
-                    <div class="col mt-5 ">
-                        <img id="imagen" class="m-3 " src="" alt="">
-                    </div>
-                    <div class="col">
-                        <h3 class="dictator-title">DICTATOR</h3>
-                        <H5 class="info-title">INFO:</H5>
-                        <p class="info-text text-justify" id="texto"></p>
-                        <p class="info-text" onclick="showCanvas()">Let's Kill him!</p>
-                    </div>
-                </div>
-            </div>
+            <div class="col-lg-8 tabla ">
+                <h3 class="display-4 m-3">Stats</h3>
+                <table class="table ">
+                  <thead>
+                    <tr>
+                        <th class="info-text m-3">USER</th>
+                        <th class="info-text m-3">SCORE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="info-text">USER</td>
+                      <td class="info-text">321</td>
+                    </tr>
+                    <tr>
+                      <td class="info-text">USER2</td>
+                      <td class="info-text">231</td>
+                    </tr>
+                    <tr>
+                      <td class="info-text">USER3</td>
+                      <td class="info-text">123</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
         </div>
-    </div>
+    </section >
     
 
-    <script src="/scripts/p5.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/addons/p5.sound.min.js"></script>
     <script src="/scripts/script.js"></script>

@@ -13,19 +13,7 @@ function preload() {
 
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    shutGun = loadSound("resources/gunshot.wav");
-    for (let i = 0; i < 30; i++) {
-        let x = random(width-100); // USAR PERLON NOISE
-        let y = random(height-100); // USAR PERLON NOISE
-        let r = random(50, 50); // USAR PERLON NOISE
-        let b = new Bubble(x, y, r);
-        trumps.push(b);
-        if(trumps.length > 30){
-            trumps.splice(i, 30);
-
-        }
-    }
+  
 
 }
 
