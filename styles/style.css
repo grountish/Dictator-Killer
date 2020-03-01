@@ -1,8 +1,80 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+@font-face {
+    font-family: "Blox";
+    src: url("/resources/FontBlox/blox2-webfont.woff");
+    src: url("/resources/FontBlox/blox2-webfont.woff") format("woff"),
+        url("/resources/FontBlox/Blox2.ttf") format("ttf"),
+        url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
 }
-body{
-    background-color: aqua;
+
+nav {
+    background-color: #121521;
+    height: 10vh;
+}
+
+.nav-item:hover {
+    color: red;
+}
+
+.hero {
+    height: 95vh;
+    background-color: #121521;
+
+}
+
+h1,
+h3 {
+    font-family: Blox;
+    color: white;
+
+}
+
+h1 {
+    font-size: 8vw;
+
+}
+
+@media screen and (max-width: 600px) {
+    .KillH1 {
+        font-size: 14vw;
+    }
+}
+
+h4 {
+    color: red;
+}
+
+hr {
+    height: 0, 5px;
+    color: #bbbbbb;
+    margin: 0;
+    padding: 0;
+}
+
+.subh2 {
+    color: red;
+}
+
+.btn-rojo {
+    background-color: red;
+    border-radius: 0;
+}
+
+#features {
+    background-color: red;
+}
+
+footer {
+    background-color: #121521;
+
+}
+
+.navli {
+    color: white;
+    text-decoration: none;
+}
+
+.navli:hover {
+    color: red;
+    text-decoration: none;
+
 }
