@@ -32,8 +32,8 @@
                 <li><a class="navli   px-1 mr-3" href="about.html">ABOUT</a></li>
                 <li><a class="navli   px-1 mr-3" href="game.html">GAME</a></li>
                 <li><a class="navli   px-1 mr-3" href="stats.html">STATS</a></li>
-                <li><a class="navli   px-1 mr-3" href="login.html">LOG IN / SIGN UP</a></li>
-
+                <li><a class="navli   px-1 mr-3" href="login.html">LOG IN </a></li>
+                <li><a class="navli   px-1 mr-3" href="signup.html"> SIGN UP</a></li>
             </ul>
         </div>
     </nav>
@@ -43,35 +43,38 @@
             <div class="tabla col-sm-8 col-10 justify-content-center">
                 <form action="/action_page.php" class="justify-content-center">
                     <div class="form-group">
-                        <div class="col mt-5 ">
-                            <h3 class="display-3 text-center my-4">SIGN-UP</h3>
+                        <div class="row mt-5 justify-content-around">
+                           
+                            <h3 class="display-3  my-4 mx-auto log-in" >LOG-IN</h3>
                         </div>
-                        <input type="user" class="form-control  my-4 py-2"placeholder="USER" id="email">
+                        
+                    <div class="form-group">
+
+                        <input type="email" class="form-control my-4 py-2" placeholder="EMAIL@EMAIL.COM" id="email">
                     </div>
                     <div class="form-group">
 
-                        <input type="email" class="form-control my-4 py-2" placeholder="EMAIL@EMAIL.COM" id="pwd">
+                        <input type="password" class="form-control my-4 py-2" placeholder="PASSWORD" id="password">
                     </div>
-                    <div class="form-group">
-
-                        <input type="password" class="form-control my-4 py-2" placeholder="PASSWORD"id="pwd">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="password" class="form-control my-4 py-2"placeholder="REPEAT PASSWORD" id="pwd">
-                    </div>
+                    
                     <div class="checkbox">
                     </div>
 
                 </form>
-                <div >
-                    <button type="submit" class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Submit</button>
+                <div>
+                    <button type="submit"
+                        class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Log In!</button>
                 </div>
             </div>
         </div>
     </div>
 
 
+
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/signup.js"></script>
+    <script src="/scripts/validator.js"></script>
+    <script src="/scripts/user.js.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

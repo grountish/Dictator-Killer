@@ -60,7 +60,7 @@ function showScore(points){
     scoreSection.style.display = "inline"
     score = document.getElementById('pointsScore')
     score.innerHTML = points
-    r.style.display = "none";
+    r.remove();
     canvaGame = document.querySelector('canvas')
-    canvaGame.style.display = "none"
+    canvaGame.remove()
 }

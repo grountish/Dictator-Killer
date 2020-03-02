@@ -31,7 +31,7 @@ nav {
 
 @media screen and (min-width: 600px) {
     .hero {
-        height: 89vh;
+        height: 85.9vh;
     }
 }
 
@@ -289,18 +289,33 @@ footer {
     display: block;
     background-color: red;
     border: 2px solid #FFF;
-    
+
 }
+
 .btnsubmit:hover {
-    color:  #121521;
+    color: #121521;
     background-color: white;
-    
+
 }
-#countdown{
+
+#countdown {
     display: none;
     font-family: 'Press Start 2P';
     font-size: 24px;
 }
-#score-section{
+
+#score-section {
     display: none;
+}
+
+.sign-up,
+.log-in {
+    display: inline;
+}
+
+.sign-up:hover,
+.log-in:hover {
+    color: black;
+    cursor: pointer;
+    letter-spacing: 5px;
 }

@@ -38,43 +38,44 @@
         </div>
     </nav>
     <hr>
+   
     <div id="hero-section" class="container-fluid">
         <div class="row justify-content-center align-items-center hero ">
-            <div class="tabla col-sm-8 ">
-                <div class="row">
-                    <div class="col mt-5 ">
-                        <img id="imagen" class="m-3 " src="" alt="">
-                    </div>
-                    <div class="col">
-                        <h3 class="dictator-title">DICTATOR</h3>
-                        <H5 class="info-title">INFO:</H5>
-                        <p class="info-text text-justify" id="texto"></p>
-                        <p class="info-text" onclick="showCanvas()">Let's Kill him!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <p id="countdown" class="py-2 mb-0 ml-3"></p>
-    </div>
-    <div id="score-section" class="container-fluid">
-        <div class="row justify-content-center align-items-center hero ">
-            <div class="tabla col-sm-8 col-lg-8 ">
-                <div class="col mt-5 ">
-                    <h3 class="display-3 text-center my-5 ">SCORE</h3>
-                </div>
-                <div class="col">
-                    <p class="info-text text-center display-4" id="pointsScore"></p>
+            <div class="tabla col-sm-8 col-10 justify-content-center">
+                <div class="form-wrapper">
+
+                    <form class="signup-form" id="signup-form" action="">
+                        <div class="row mt-5 justify-content-around">
+                            <h3 class="display-3  my-4 mx-auto sign-up">SIGN-UP</h3>
+
+                        </div>
+                        <input class="form-control  my-4 py-2" type="text" id="name" placeholder="Nombre"
+                            autocomplete="off" required />
+                        <input class="form-control  my-4 py-2" type="email" id="email" placeholder="Email"
+                            autocomplete="off" required />
+                        <input class="form-control  my-4 py-2" type="text" id="phone" placeholder="Teléfono"
+                            autocomplete="off" required />
+                        <input class="form-control  my-4 py-2" type="password" id="password" placeholder="******"
+                            autocomplete="off" required />
+                        <input class="form-control  my-4 py-2" type="password" id="repeat-password" placeholder="******"
+                            autocomplete="off" required />
+
+                        <button id="sign-up-btn" type="submit"
+                            class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Sign Up!</button>
+                    </form>
+
+                    <div class="errors-container"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="/scripts/p5.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/addons/p5.sound.min.js"></script>
-    <script src="/scripts/script.js"></script>
+
+    <script src="/scripts/signup.js"></script>
+    <script src="/scripts/validator.js"></script>
+    <script src="/scripts/user.js"></script>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
