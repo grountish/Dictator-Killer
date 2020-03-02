@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/styles/style.css">
     <title>Dictator Killer - Game</title>
 
@@ -41,29 +41,26 @@
     <div id="hero-section" class="container-fluid">
         <div class="row justify-content-center align-items-center hero ">
             <div class="tabla col-sm-8 col-10 justify-content-center">
-                <form action="/action_page.php" class="justify-content-center">
-                    <div class="form-group">
+                <div class="form-wrapper">
+
+                    <form class="signup-form" id="login-form" action="">
                         <div class="row mt-5 justify-content-around">
-                           
-                            <h3 class="display-3  my-4 mx-auto log-in" >LOG-IN</h3>
+                            <h3 class="display-3  my-4 mx-auto sign-up">LOG-In</h3>
+
                         </div>
+                        <input class="form-control  my-4 py-2" type="text" id="name" placeholder="Nombre"
+                            autocomplete="off" required />
                         
-                    <div class="form-group">
+                       
+                        <input class="form-control  my-4 py-2" type="password" id="password" placeholder="******"
+                            autocomplete="off" required />
+                        
 
-                        <input type="email" class="form-control my-4 py-2" placeholder="EMAIL@EMAIL.COM" id="email">
-                    </div>
-                    <div class="form-group">
+                        <button id="log-in-button" type="submit"
+                            class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Log In!</button>
+                    </form>
 
-                        <input type="password" class="form-control my-4 py-2" placeholder="PASSWORD" id="password">
-                    </div>
-                    
-                    <div class="checkbox">
-                    </div>
-
-                </form>
-                <div>
-                    <button type="submit"
-                        class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Log In!</button>
+                    <div class="errors-container"></div>
                 </div>
             </div>
         </div>
@@ -71,10 +68,9 @@
 
 
 
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/signup.js"></script>
+    <script src="/scripts/login.js"></script>
     <script src="/scripts/validator.js"></script>
-    <script src="/scripts/user.js.js"></script>
+    <script src="/scripts/user.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

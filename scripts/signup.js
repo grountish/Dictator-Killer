@@ -16,7 +16,8 @@ signUpButton.addEventListener("click", function(event){
     
     if (checkValidUser()){
         console.log("user registered")
-        createUser(name.value, email.value, password.value)
+        console.log(userName.value, email.value, password.value);
+        createUser(userName.value, email.value, password.value)
     };
 })
 
