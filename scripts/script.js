@@ -14,7 +14,7 @@ getArticle()
 window.onresize = showCanvas;
 
 function showCanvas() {
-    createCanvas(windowWidth-40, windowHeight-90);
+    createCanvas(windowWidth-40, windowHeight-150);
     shutGun = loadSound("resources/gunshot.wav");
     for (let i = 0; i < 30; i++) {
         let x = random(width - 100); // USAR PERLON NOISE
@@ -24,11 +24,43 @@ function showCanvas() {
         trumps.push(b);
         if (trumps.length > 30) {
             trumps.splice(i, 30);
-
         }
     }
     heroSelection = document.getElementById("hero-section")
     if(heroSelection.style.display !== "none"){
         heroSelection.style.display = "none";
     } 
+    r.style.display = "inline"
+   
+}
+
+var start = Date.now(),
+r = document.getElementById('countdown');
+let timeScore = function () {
+    var diff = Date.now() - start,
+        ns = (((3e5 - diff) / 1000) >> 0),
+        m = (ns / 60) >> 0,
+        s = ns - m * 60;
+        let points = (trumps.length - 30 ) * -5
+
+    r.textContent = "Time :" + '' + (('' + s).length > 1 ? '' : '0') + s + ' Seconds | Points :' + points;
+    if (diff > (3e5)) {
+        start = Date.now()
+    } if(s === 1){
+        clearTimeout(timeScore)
+        showScore(points)
+    }
+    setTimeout(timeScore, 1000);
+};
+timeScore()
+
+
+function showScore(points){
+    scoreSection = document.getElementById('score-section')
+    scoreSection.style.display = "inline"
+    score = document.getElementById('pointsScore')
+    score.innerHTML = points
+    r.style.display = "none";
+    canvaGame = document.querySelector('canvas')
+    canvaGame.style.display = "none"
 }

@@ -6,6 +6,8 @@ let shutGun;
 window.onresize = setup;
 // ----------------------
 
+
+
 function preload() {
     img = loadImage("https://www.pngkey.com/png/full/4-41148_trump-face-donald-trump.png")
 }
@@ -13,7 +15,7 @@ function preload() {
 
 
 function setup() {
-  
+
 
 }
 
@@ -41,6 +43,7 @@ function draw() {
     textSize(random(100))
     fill(random(222))
     text(trumps.length, random(5000), random(5000));
+    
 }
 
 class Bubble {

@@ -25,6 +25,7 @@ nav {
 
 .hero {
     background-color: #121521;
+    min-height: 450px;
 
 }
 
@@ -282,4 +283,24 @@ footer {
 
 .tabla {
     background-color: red;
+}
+
+.btnsubmit {
+    display: block;
+    background-color: red;
+    border: 2px solid #FFF;
+    
+}
+.btnsubmit:hover {
+    color:  #121521;
+    background-color: white;
+    
+}
+#countdown{
+    display: none;
+    font-family: 'Press Start 2P';
+    font-size: 24px;
+}
+#score-section{
+    display: none;
 }
