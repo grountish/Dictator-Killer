@@ -14,7 +14,7 @@ getArticle()
 window.onresize = showCanvas;
 
 function showCanvas() {
-    createCanvas(windowWidth-40, windowHeight-150);
+    createCanvas(windowWidth-10, windowHeight-130);
     shutGun = loadSound("resources/gunshot.wav");
     for (let i = 0; i < 30; i++) {
         let x = random(width - 100); // USAR PERLON NOISE
@@ -46,7 +46,7 @@ let timeScore = function () {
     r.textContent = "Time :" + '' + (('' + s).length > 1 ? '' : '0') + s + ' Seconds | Points :' + points;
     if (diff > (3e5)) {
         start = Date.now()
-    } if(s === 1){
+    } if(s === 56){
         clearTimeout(timeScore)
         showScore(points)
     }
@@ -54,6 +54,8 @@ let timeScore = function () {
 };
 timeScore()
 
+let firstPlaceName = document.getElementById('firstPlace')
+let firstPlaceScore = document.getElementById('firstScore')
 
 function showScore(points){
     scoreSection = document.getElementById('score-section')
@@ -63,4 +65,9 @@ function showScore(points){
     r.remove();
     canvaGame = document.querySelector('canvas')
     canvaGame.remove()
+    let uptateScore = `[{name: "user4", email: "mail4@mail.com", password: "123123", score: ${points}}]`;
+    localStorage.users = uptateScore // <--- setItem(users, JSON.stringify(item))
+    firstPlaceScore.innerHTML = points
+    firstPlaceName.innerHTML = localStorage.users[0].name
+    
 }
