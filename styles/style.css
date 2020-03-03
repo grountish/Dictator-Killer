@@ -263,6 +263,18 @@ footer {
 
 }
 
+@media screen and (max-width: 600px) {
+    .quote {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #imagen {
+        max-width: 150px;
+    }
+}
+
 .navli,
 .info-title,
 .info-text {
@@ -282,6 +294,7 @@ footer {
 }
 
 .tabla {
+    border: 2px solid #FFF;
     background-color: red;
 }
 
@@ -320,7 +333,8 @@ footer {
 }
 
 .sign-up:hover,
-.log-in:hover {
+.log-in:hover,
+.stats:hover {
     color: black;
     cursor: pointer;
     letter-spacing: 5px;
@@ -332,5 +346,21 @@ input {
 }
 
 #game-body {
-    cursor: url('/resources/cursor.cur'),auto;
+    cursor: url('/resources/cursor.cur'), auto;
+
+        animation: colorchange 60s; 
+        -webkit-animation: colorchange 60s;
+      }
+  
+      @keyframes colorchange
+      {
+        0%   {background: white;}
+        100% {background: red;}
+      }
+  
+      @-webkit-keyframes colorchange
+      {
+        0%   {background: white;}
+        100% {background: red;}
+      
 }

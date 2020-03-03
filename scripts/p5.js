@@ -1,22 +1,24 @@
 let trumps = [];
 let trump;
 let shutGun;
+let track;
 //------------------Resize Windows = Setup
 
 window.onresize = setup;
 // ----------------------
-
+var audio = new Audio('/resources/song.mp3');
+audio.play();
 
 
 function preload() {
     img = loadImage("https://www.pngkey.com/png/full/4-41148_trump-face-donald-trump.png")
+    // track = loadSound("/resources/song.wav")
+
 }
 
 
-
 function setup() {
-
-
+    // shutGun = loadSound("/resources/gunshot.wav")
 }
 
 function mousePressed() {
@@ -69,13 +71,13 @@ class Bubble {
     }
 
     move() {
-        this.x = this.x + random(-5, 5);
-        this.y = this.y + random(-5, 5);
+        this.x = this.x + random(-12, 12);
+        this.y = this.y + random(-12, 12);
     }
 
     show() {
         if (width < 500) {
-            image(img, this.x, this.y, 70, 70) // <-- iphone 6,7,8
+            image(img, this.x, this.y, 40, 40) // <-- iphone 6,7,8
 
         }
         if (width > 500) {

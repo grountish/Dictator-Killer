@@ -22,7 +22,7 @@ window.onresize = showCanvas;
 function showCanvas() {
     createCanvas(windowWidth - 10, windowHeight - 130);
     shutGun = loadSound("resources/gunshot.wav");
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 60; i++) {
         let x = random(width - 100); // USAR PERLON NOISE
         let y = random(height - 100); // USAR PERLON NOISE
         let r = random(50, 50); // USAR PERLON NOISE
@@ -46,19 +46,21 @@ let timeScore = function () {
     var diff = Date.now() - start,
         ns = (((3e5 - diff) / 1000) >> 0),
         m = (ns / 60) >> 0,
-        s = ns - m * 60;
+        s = ns - (m * 60) ;
     points = (trumps.length - 30) * -5
 
     r.textContent = "Time :" + '' + (('' + s).length > 1 ? '' : '0') + s + ' Seconds | Points :' + points;
     if (diff > (3e5)) {
         start = Date.now()
     }
-    if (s === 56) {
+    if (s === 1) {
         clearTimeout(timeScore)
         showScore(points)
     }
     setTimeout(timeScore, 1000);
+   
 };
+
 timeScore()
 
 
@@ -77,6 +79,7 @@ function showScore(points) {
 }
 btnSave.onclick = saveScore
 tabla = document.getElementById('tabla')
+
 function saveScore() {
 
     let usersDB = JSON.parse(localStorage.getItem('scores'))
