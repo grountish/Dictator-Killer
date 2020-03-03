@@ -11,7 +11,7 @@ audio.play();
 
 
 function preload() {
-    img = loadImage("https://www.pngkey.com/png/full/4-41148_trump-face-donald-trump.png")
+    img = loadImage("/images/trumpface.png")
     // track = loadSound("/resources/song.wav")
 
 }
@@ -81,7 +81,7 @@ class Bubble {
 
         }
         if (width > 500) {
-            image(img, this.x, this.y, 60, (height / 10)) // <-- wide res
+            image(img, this.x+100, this.y-100, 60, (height / 10)) // <-- wide res
 
         }
     }

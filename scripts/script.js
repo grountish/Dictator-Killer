@@ -46,8 +46,8 @@ let timeScore = function () {
     var diff = Date.now() - start,
         ns = (((3e5 - diff) / 1000) >> 0),
         m = (ns / 60) >> 0,
-        s = ns - (m * 60) ;
-    points = (trumps.length - 30) * -5
+        s = ns - m * 60 ;
+    points = (trumps.length - 59) * -5
 
     r.textContent = "Time :" + '' + (('' + s).length > 1 ? '' : '0') + s + ' Seconds | Points :' + points;
     if (diff > (3e5)) {
