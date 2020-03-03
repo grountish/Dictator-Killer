@@ -303,6 +303,7 @@ footer {
     font-family: 'Press Start 2P';
     font-size: 20px;
 }
+
 @media screen and (max-width: 600px) {
     #countdown {
         font-size: 10px;
@@ -324,6 +325,12 @@ footer {
     cursor: pointer;
     letter-spacing: 5px;
 }
-::placeholder, input {
+
+::placeholder,
+input {
     font-family: 'Press Start 2P';
-  }
+}
+
+#game-body {
+    cursor: url('/resources/cursor.cur'),auto;
+}

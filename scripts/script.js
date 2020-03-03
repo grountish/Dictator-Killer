@@ -99,6 +99,6 @@ function saveScore() {
     goToStats.innerHTML = `<a href="stats.html">
     <button id="sign-up-btn" type="submit"
     class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Go to stats</button></a>`
-    tabla.appendChild(goToStats)
+    window.location.href = "stats.html"
 
 }
