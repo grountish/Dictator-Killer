@@ -9,60 +9,65 @@ let formWrapper = document.getElementsByClassName("form-wrapper")[0];
 let signUpButton = document.getElementById('sign-up-btn')
 
 let usersDB = JSON.parse(localStorage.getItem('users'))
+// let currentUser = JSON.parse(localStorage.setItem('currentUser'))
 
-signUpButton.addEventListener("click", function(event){
+signUpButton.addEventListener("click", function (event) {
     event.preventDefault();
     deleteErrors();
-    
-    if (checkValidUser()){
-        console.log("user registered")
+
+    if (checkValidUser()) {
+        console.log("sign up succesfully!")
         console.log(userName.value, email.value, password.value);
-        createUser(userName.value, email.value, password.value)
+        createUser(userName.value, email.value, password.value, score = 0, currentUser = true)
+        let div = document.createElement("div")
+        div.innerHTML = `<p class="info-text" href="game.html"> Welcome ${userName.value} <a class="info-text" href="game.html"> Let's kill Some Dictators</a></p>`
+        form.insertBefore(div, signUpButton)
+
     };
 })
 
 function checkValidUser() {
-    let signUpValidator = new SignUpValidator (userName.value, email.value, password.value, repeatPassword.value);
-    
+    let signUpValidator = new SignUpValidator(userName.value, email.value, password.value, repeatPassword.value);
+
     let usersDB = JSON.parse(localStorage.getItem("users"));
     let validUser = true;
 
-    if(!signUpValidator.checkUserName()){
+    if (!signUpValidator.checkUserName()) {
         signUpValidator.errorCreator("Por favor, introduce un nombre válido", userName)
-        validUser=false
+        validUser = false
     }
-    if(!signUpValidator.checkEmail()){
+    if (!signUpValidator.checkEmail()) {
         signUpValidator.errorCreator("Por favor, introduce una dirección de mail válida", email)
-        validUser=false
+        validUser = false
     }
-    if(!signUpValidator.checkPassword()){
+    if (!signUpValidator.checkPassword()) {
         signUpValidator.errorCreator("Por favor, introduce una contraseña válida", password)
-        validUser=false
+        validUser = false
     }
-    if(!signUpValidator.checkRepeatPassword()){
+    if (!signUpValidator.checkRepeatPassword()) {
         signUpValidator.errorCreator("Las contraseñas no coinciden", repeatPassword)
-        validUser=false
+        validUser = false
     }
-    if (!signUpValidator.checkEmailInDB(usersDB)){
+    if (!signUpValidator.checkEmailInDB(usersDB)) {
         signUpValidator.errorCreator("Este mail ya existe", email)
-        validUser=false
+        validUser = false
     }
 
     return validUser
 }
 
-function deleteErrors (){
+function deleteErrors() {
     let errors = [...document.getElementsByClassName("error")]
     errors ? errors.forEach(error => error.remove()) : null;
 }
 
-function createUser (name, email, password) {
-    const newUser = new User (name, email, password)
+function createUser(name, email, password) {
+    const newUser = new User(name, email, password, score, currentUser)
 
-    if (usersDB){
+    if (usersDB) {
         usersDB.push(newUser);
     } else {
         usersDB = [newUser]
     }
     localStorage.setItem('users', JSON.stringify(usersDB));
-} 
+}

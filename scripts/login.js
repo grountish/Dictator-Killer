@@ -4,6 +4,7 @@ let logInButton = document.getElementById("log-in-button");
 let form = document.getElementById('login-form')
 let formWrapper = document.getElementsByClassName("form-wrapper")[0];
 
+
 let checkUser = () => {
     let usersDB = JSON.parse(localStorage.getItem('users'))
     counter = 0;
@@ -36,6 +37,7 @@ let deleteErrors = () => {
 let validationMessage = () => {
     let div = document.createElement("div")
     div.innerHTML = `<p class="info-text" href="game.html"> Welcome ${userName.value}! <a class="info-text" href="game.html"> Let's kill Some Dictators</a></p>`
+    
     form.insertBefore(div, logInButton)
     logInButton.remove()
 }

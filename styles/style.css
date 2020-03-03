@@ -324,3 +324,6 @@ footer {
     cursor: pointer;
     letter-spacing: 5px;
 }
+::placeholder, input {
+    font-family: 'Press Start 2P';
+  }

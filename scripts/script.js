@@ -1,4 +1,10 @@
 let articleRaw = "https://en.wikipedia.org/api/rest_v1/page/summary/Donald_Trump"
+
+let userName = document.getElementById('name')
+let btnSave = document.getElementById('saveScore')
+let points = 0;
+
+
 const getArticle = async () => {
 
     const response = await
@@ -14,7 +20,7 @@ getArticle()
 window.onresize = showCanvas;
 
 function showCanvas() {
-    createCanvas(windowWidth-10, windowHeight-130);
+    createCanvas(windowWidth - 10, windowHeight - 130);
     shutGun = loadSound("resources/gunshot.wav");
     for (let i = 0; i < 30; i++) {
         let x = random(width - 100); // USAR PERLON NOISE
@@ -27,26 +33,27 @@ function showCanvas() {
         }
     }
     heroSelection = document.getElementById("hero-section")
-    if(heroSelection.style.display !== "none"){
+    if (heroSelection.style.display !== "none") {
         heroSelection.style.display = "none";
-    } 
+    }
     r.style.display = "inline"
-   
+
 }
 
 var start = Date.now(),
-r = document.getElementById('countdown');
+    r = document.getElementById('countdown');
 let timeScore = function () {
     var diff = Date.now() - start,
         ns = (((3e5 - diff) / 1000) >> 0),
         m = (ns / 60) >> 0,
         s = ns - m * 60;
-        let points = (trumps.length - 30 ) * -5
+    points = (trumps.length - 30) * -5
 
     r.textContent = "Time :" + '' + (('' + s).length > 1 ? '' : '0') + s + ' Seconds | Points :' + points;
     if (diff > (3e5)) {
         start = Date.now()
-    } if(s === 56){
+    }
+    if (s === 56) {
         clearTimeout(timeScore)
         showScore(points)
     }
@@ -54,10 +61,9 @@ let timeScore = function () {
 };
 timeScore()
 
-let firstPlaceName = document.getElementById('firstPlace')
-let firstPlaceScore = document.getElementById('firstScore')
 
-function showScore(points){
+
+function showScore(points) {
     scoreSection = document.getElementById('score-section')
     scoreSection.style.display = "inline"
     score = document.getElementById('pointsScore')
@@ -65,9 +71,34 @@ function showScore(points){
     r.remove();
     canvaGame = document.querySelector('canvas')
     canvaGame.remove()
-    let uptateScore = `[{name: "user4", email: "mail4@mail.com", password: "123123", score: ${points}}]`;
-    localStorage.users = uptateScore // <--- setItem(users, JSON.stringify(item))
-    firstPlaceScore.innerHTML = points
-    firstPlaceName.innerHTML = localStorage.users[0].name
-    
+    pointStrings = points + ""
+    console.log(pointStrings);
+
+}
+btnSave.onclick = saveScore
+tabla = document.getElementById('tabla')
+function saveScore() {
+
+    let usersDB = JSON.parse(localStorage.getItem('scores'))
+
+    if (!usersDB) {
+        usersDB = []
+    }
+
+    let puntuation = {
+        name: userName.value,
+        score: points
+    }
+
+
+    usersDB.push(puntuation)
+
+    localStorage.setItem('score', JSON.stringify(usersDB))
+    btnSave.remove()
+    let goToStats = document.createElement("div")
+    goToStats.innerHTML = `<a href="stats.html">
+    <button id="sign-up-btn" type="submit"
+    class="py-2 my-3 col-lg-4  mx-auto text-center info-text btnsubmit">Go to stats</button></a>`
+    tabla.appendChild(goToStats)
+
 }
