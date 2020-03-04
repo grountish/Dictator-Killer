@@ -20,7 +20,13 @@ function preload() {
 function setup() {
     // shutGun = loadSound("/resources/gunshot.wav")
 }
-
+function touchStarted() {
+    for (let i = trumps.length - 1; i >= 0; i--) {
+      if (trumps[i].contains(mouseX, mouseY)) {
+        trumps.splice(i, 1);
+      }
+    }
+  }
 function mousePressed() {
     if (shutGun.isPlaying()) {
         shutGun.stop();
