@@ -1,8 +1,8 @@
 @font-face {
     font-family: "Blox";
-    src: url("./resources/FontBlox/blox2-webfont.woff");
-    src: url("./resources/FontBlox/blox2-webfont.woff") format("woff"),
-        url("./resources/FontBlox/Blox2.ttf") format("ttf"),
+    src: url("../resources/FontBlox/blox2-webfont.woff");
+    src: url("../resources/FontBlox/blox2-webfont.woff") format("woff"),
+        url("../resources/FontBlox/Blox2.ttf") format("ttf"),
         url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
 }
 
