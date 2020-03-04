@@ -21,7 +21,7 @@ window.onresize = showCanvas;
 
 function showCanvas() {
     createCanvas(windowWidth - 10, windowHeight - 130);
-    shutGun = loadSound("resources/gunshot.wav");
+    shutGun = loadSound("./resources/gunshot.wav");
     for (let i = 0; i < 60; i++) {
         let x = random(width - 100); // USAR PERLON NOISE
         let y = random(height - 100); // USAR PERLON NOISE
