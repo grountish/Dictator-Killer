@@ -347,7 +347,7 @@ input {
 }
 
 #game-body {
-    cursor: url('./resources/cursor.cur'), auto;
+    cursor: url('../resources/cursor.cur'), auto;
 
         animation: colorchange 60s; 
         -webkit-animation: colorchange 60s;
