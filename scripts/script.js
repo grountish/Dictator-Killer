@@ -1,4 +1,19 @@
-let articleRaw = "https://en.wikipedia.org/api/rest_v1/page/summary/Donald_Trump"
+let dictatorName 
+let dictatorLastName
+let usersDB = JSON.parse(localStorage.getItem('score'))
+
+
+function checkPoints(){
+    if(!usersDB || usersDB[0].score < 275){
+        dictatorName = 'Donald'
+     dictatorLastName = 'Trump'
+    } else{
+        dictatorName = 'Francisco'
+        dictatorLastName = 'Franco'
+    }
+}
+checkPoints()
+let articleRaw = `https://en.wikipedia.org/api/rest_v1/page/summary/${dictatorName}_${dictatorLastName}`
 
 let userName = document.getElementById('name')
 let btnSave = document.getElementById('saveScore')
