@@ -37,7 +37,6 @@ let deleteErrors = () => {
 let validationMessage = () => {
     let div = document.createElement("div")
     div.innerHTML = `<p class="info-text" href="game.html"> Welcome ${userName.value}! <a class="info-text" href="game.html"> Let's kill Some Dictators</a></p>`
-    
     form.insertBefore(div, logInButton)
     logInButton.remove()
 }

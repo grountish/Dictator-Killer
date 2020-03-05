@@ -365,3 +365,8 @@ input {
         100% {background: red;}
       
 }
+@media screen and (max-width: 450px) {
+    #texto {
+        font-size: 10px;
+    }
+}
