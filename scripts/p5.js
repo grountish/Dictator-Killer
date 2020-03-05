@@ -2,6 +2,8 @@ let trumps = [];
 let trump;
 let shutGun;
 let track;
+let dictatorFace;
+
 //------------------Resize Windows = Setup
 
 window.onresize = setup;
@@ -9,9 +11,29 @@ window.onresize = setup;
 var audio = new Audio('./resources/song.mp3');
 audio.play();
 
-
+// function checkPoints2(){
+//     if(!usersDB || usersDB[0].score < 40){
+//        dictatorFace = 'trumpface.png'
+//     } else{
+//         dictatorFace = 'francoface.png'
+//     }
+// }
+// checkPoints2()
+// dictatorFace = 'francoface.png'
 function preload() {
-    img = loadImage("./images/trumpface.png")
+
+    let newDB = JSON.parse(localStorage.getItem("score"))
+
+    let dictatorFace = 'trumpface.png'
+
+    if(newDB){
+        if(newDB[0].score > 275){
+            dictatorFace = 'francoface.png'
+        }
+    }
+        
+
+    img = loadImage(`./images/${dictatorFace}`)
     // track = loadSound("/resources/song.wav")
 
 }

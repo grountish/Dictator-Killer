@@ -23,7 +23,7 @@ let checkUser = () => {
 let errorUser = () => {
     let div = document.createElement("div")
     div.innerHTML = " Incorrect user name or password "
-    div.setAttribute("class", "error")
+    div.setAttribute("class", "error info-text text-center")
     form.appendChild(div)
 }
 
