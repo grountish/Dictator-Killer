@@ -80,12 +80,15 @@ function showScore(points) {
 btnSave.onclick = saveScore
 tabla = document.getElementById('tabla')
 
+
+let scoresDB = JSON.parse(localStorage.getItem('scores'))
+
+
 function saveScore() {
 
-    let usersDB = JSON.parse(localStorage.getItem('scores'))
 
-    if (!usersDB) {
-        usersDB = []
+    if (!scoresDB) {
+        scoresDB = []
     }
 
     let puntuation = {
@@ -94,9 +97,9 @@ function saveScore() {
     }
 
 
-    usersDB.push(puntuation)
+    scoresDB.push(puntuation)
 
-    localStorage.setItem('score', JSON.stringify(usersDB))
+    localStorage.setItem('score', JSON.stringify(scoresDB))
     btnSave.remove()
     let goToStats = document.createElement("div")
     goToStats.innerHTML = `<a href="stats.html">

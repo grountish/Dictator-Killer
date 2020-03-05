@@ -347,7 +347,7 @@ input {
 }
 
 #game-body {
-    cursor: url('./resources/cursor.cur'), auto;
+    cursor: url('../resources/cursor.cur'), auto;
 
         animation: colorchange 60s; 
         -webkit-animation: colorchange 60s;
@@ -364,4 +364,9 @@ input {
         0%   {background: white;}
         100% {background: red;}
       
+}
+@media screen and (max-width: 450px) {
+    #texto {
+        font-size: 10px;
+    }
 }
