@@ -9,17 +9,12 @@ let formWrapper = document.getElementsByClassName("form-wrapper")[0];
 let signUpButton = document.getElementById('sign-up-btn')
 let usersDB = JSON.parse(localStorage.getItem('users'))
 
-
-
-// let currentUser = JSON.parse(localStorage.setItem('currentUser'))
-
 signUpButton.addEventListener("click", function (event) {
     event.preventDefault();
     deleteErrors();
 
     if (checkValidUser()) {
-        console.log("sign up succesfully!")
-        console.log(userName.value, email.value, password.value);
+      
         createUser(userName.value, email.value, password.value, score = 0, currentUser = true)
         let div = document.createElement("div")
         div.innerHTML = `<p class="info-text" href="game.html"> Welcome ${userName.value} <a class="info-text" href="game.html"> Let's kill Some Dictators</a></p>`
@@ -35,23 +30,23 @@ function checkValidUser() {
     let validUser = true;
 
     if (!signUpValidator.checkUserName()) {
-        signUpValidator.errorCreator("Por favor, introduce un nombre válido", userName)
+        signUpValidator.errorCreator("Insert valid UserN4m3_", userName)
         validUser = false
     }
     if (!signUpValidator.checkEmail()) {
-        signUpValidator.errorCreator("Por favor, introduce una dirección de mail válida", email)
+        signUpValidator.errorCreator("Valid eM@ail insert - please", email)
         validUser = false
     }
     if (!signUpValidator.checkPassword()) {
-        signUpValidator.errorCreator("Por favor, introduce una contraseña válida", password)
+        signUpValidator.errorCreator("Insert Valid Passw0rd", password)
         validUser = false
     }
     if (!signUpValidator.checkRepeatPassword()) {
-        signUpValidator.errorCreator("Las contraseñas no coinciden", repeatPassword)
+        signUpValidator.errorCreator("No match betweee3n Pass", repeatPassword)
         validUser = false
     }
     if (!signUpValidator.checkEmailInDB(usersDB)) {
-        signUpValidator.errorCreator("Este mail ya existe", email)
+        signUpValidator.errorCreator("M@il already register3d", email)
         validUser = false
     }
 

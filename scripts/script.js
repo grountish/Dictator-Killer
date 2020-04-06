@@ -1,7 +1,30 @@
 let dictatorName 
 let dictatorLastName
 let usersDB = JSON.parse(localStorage.getItem('score'))
+window.onresize = showCanvas;
+let userName = document.getElementById('name')
+let btnSave = document.getElementById('saveScore')
+let points = 0;
+  // Initialize Firebase
+var firebaseConfig = {
+    apiKey: "AIzaSyB5-avS8qpLLRa2KIhyRSwvIvhYNIh1-s4",
+    authDomain: "testing-proyect-a9124.firebaseapp.com",
+    databaseURL: "https://testing-proyect-a9124.firebaseio.com",
+    projectId: "testing-proyect-a9124",
+    storageBucket: "testing-proyect-a9124.appspot.com",
+    messagingSenderId: "858551138090",
+    appId: "1:858551138090:web:70b27c90b9781ee0e11053"
+};
 
+firebase.initializeApp(firebaseConfig)
+var database = firebase.database();
+let ref = database.ref('testing-proyect-a9124')
+
+
+// end of setting DB
+
+
+// check points of current user 
 
 function checkPoints(){
     if(!usersDB || usersDB[0].score < 275){
@@ -13,12 +36,9 @@ function checkPoints(){
     }
 }
 checkPoints()
+
+// Fetch F(x) 
 let articleRaw = `https://en.wikipedia.org/api/rest_v1/page/summary/${dictatorName}_${dictatorLastName}`
-
-let userName = document.getElementById('name')
-let btnSave = document.getElementById('saveScore')
-let points = 0;
-
 
 const getArticle = async () => {
 
@@ -31,8 +51,9 @@ const getArticle = async () => {
     document.getElementById('texto').innerHTML = description
     document.getElementById('imagen').src = photoArticle
 };
+
 getArticle()
-window.onresize = showCanvas;
+
 
 function showCanvas() {
     createCanvas(windowWidth , windowHeight - 120);
@@ -88,14 +109,12 @@ function showScore(points) {
     r.remove();
     canvaGame = document.querySelector('canvas')
     canvaGame.remove()
-    pointStrings = points + ""
-    console.log(pointStrings);
+    pointStrings = points 
 
 }
+
 btnSave.onclick = saveScore
-tabla = document.getElementById('tabla')
-
-
+let tabla = document.getElementById('tabla')
 let scoresDB = JSON.parse(localStorage.getItem('scores'))
 
 
@@ -106,12 +125,18 @@ function saveScore() {
         scoresDB = []
     }
 
+    // To check the current user points
     let puntuation = {
         name: userName.value,
         score: points
     }
+    // data to firebase
+    let dataToFB = {
+        name: userName.value,
+        score: points
+    }
 
-
+    ref.push(dataToFB)
     scoresDB.push(puntuation)
 
     localStorage.setItem('score', JSON.stringify(scoresDB))

@@ -11,15 +11,6 @@ window.onresize = setup;
 var audio = new Audio('./resources/song.mp3');
 audio.play();
 
-// function checkPoints2(){
-//     if(!usersDB || usersDB[0].score < 40){
-//        dictatorFace = 'trumpface.png'
-//     } else{
-//         dictatorFace = 'francoface.png'
-//     }
-// }
-// checkPoints2()
-// dictatorFace = 'francoface.png'
 function preload() {
 
     let newDB = JSON.parse(localStorage.getItem("score"))
@@ -34,13 +25,13 @@ function preload() {
         
 
     img = loadImage(`./images/${dictatorFace}`)
-    // track = loadSound("/resources/song.wav")
+  
 
 }
 
 
 function setup() {
-    // shutGun = loadSound("/resources/gunshot.wav")
+    shutGun = loadSound("/resources/gunshot.wav")
 }
 function touchStarted() {
     for (let i = trumps.length - 1; i >= 0; i--) {
