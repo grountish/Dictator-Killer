@@ -25,6 +25,7 @@ function gotData(data) {
     let scores = data.val()
     let valuex = Object.values(scores)
     let sorted = valuex.sort((a,b)=> b.score - a.score)
+    sorted = sorted.splice(0,10)
     sorted.forEach((puntuation) => {
         
         let newTr = document.createElement('tr')
